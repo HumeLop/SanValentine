@@ -104,10 +104,11 @@ button:hover {
     /* Two images per row on mobile */
     height: 350px;
     /* Fixed height for all images */
-    object-fit: cover;
+    object-fit: contain;
     /* Ensure images cover the area without distortion */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 /* Adjust for larger screens */
@@ -170,25 +171,25 @@ body.dark-mode {
     background-color: #1a1a1a; /* Dark background */
     color: #ffffff; /* Light text */
   }
-  
+
   body.dark-mode .container {
     background-color: #333333; /* Dark container background */
     color: #ffffff; /* Light text */
   }
-  
+
   body.dark-mode #yesButton {
     background-color: #ff4d4d; /* Darker red for the "Yes" button */
   }
-  
+
   body.dark-mode #noButton {
     background-color: #666666; /* Darker gray for the "No" button */
     color: #ffffff; /* Light text */
   }
-  
+
   body.dark-mode #imageContainer img {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Light shadow for images */
   }
-  
+
   body.dark-mode .image-grid img {
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Light shadow for grid images */
   }
