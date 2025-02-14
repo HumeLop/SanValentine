@@ -50,16 +50,17 @@ function moveNoButton() {
   // Calculate random positions within the visible screen area
   const maxX = screenWidth - buttonWidth;
   const maxY = screenHeight - buttonHeight;
+
   const randomX = Math.random() * maxX;
   const randomY = Math.random() * maxY;
 
-  // Set the new position with proper string interpolation
+  // Set the new position
   noButton.style.position = 'fixed'; // Use fixed positioning to stay within the viewport
   noButton.style.left = `${randomX}px`;
   noButton.style.top = `${randomY}px`;
 }
 
-// Show image and move button when "No" is clicked or touched
+// Show image and move button when "No" is clicked or hovered
 noButton.addEventListener('click', () => {
   if (isFirstClick) {
     // Apply a transition effect on the first click
@@ -70,21 +71,10 @@ noButton.addEventListener('click', () => {
       isFirstClick = false; // Mark the first click as done
     }, 500); // Duration of the transition
   }
+  mouseoverNoButton()
   moveNoButton();
-});
 
-// Handle touch events for mobile devices
-noButton.addEventListener('touchstart', () => {
-  moveNoButton();
 });
-
-// Move button on hover (for desktop)
-noButton.addEventListener('mouseover', () => {
-  imageContainer.innerHTML = '<img src="https://i.pinimg.com/564x/dd/7f/6c/dd7f6ca2bce302e27f51b579ef732aeb.jpg" alt="Laughing Snoopy">';
-  response.textContent = "Jaja, no puedes tocar el botón 🤣🫢";
-  moveNoButton();
-});
-
 function mouseoverNoButton() {
   noButton.addEventListener('mouseover', () => {
     imageContainer.innerHTML = '<img src="https://i.pinimg.com/564x/dd/7f/6c/dd7f6ca2bce302e27f51b579ef732aeb.jpg" alt="Laughing Snoopy">';
